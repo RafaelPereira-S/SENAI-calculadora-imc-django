@@ -1,1 +1,0 @@
-print('O que ta acontecendo?')
