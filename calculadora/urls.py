@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('imc/', views.calcular_imc, name='calculadora_imc'),
-    path('pagina1/', views.calcular_imc, name='calculadora_imc'),
-    path('pagina2/', views.calcular_imc, name='calculadora_imc'),
+    path('pagina1/', views.texto01, name='Página 01'),
+    path('pagina2/', views.texto02, name='Página 02'),
 ]

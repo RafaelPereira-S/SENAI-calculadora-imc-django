@@ -46,3 +46,9 @@ def calcular_imc(request):
         'classificacao': classificacao
 	    }
     )
+
+def texto01 (valor = None):
+    return render (valor, 'calculadora/pag1.html')
+
+def texto02 (valor = None):
+    return render (valor, 'calculadora/pag2.html')
