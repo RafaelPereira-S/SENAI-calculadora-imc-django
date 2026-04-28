@@ -52,3 +52,9 @@ def texto01 (valor = None):
 
 def texto02 (valor = None):
     return render (valor, 'calculadora/pag2.html')
+
+def texto03 (valor = None):
+    return render (valor, 'calculadora/pag3.html')
+
+def texto04 (valor = None):
+    return render (valor, 'calculadora/pag4.html')

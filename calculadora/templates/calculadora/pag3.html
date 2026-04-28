@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página 2 - Animada</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      /* Fundo Laranja-Bege */
+      background-color: #f5d5b0; 
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: 800; /* Deixa o texto em negrito pesado */
+      color: #333;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      
+      /* Chamada da animação */
+      animation: zoom-pulse 3s infinite ease-in-out;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #555;
+      letter-spacing: 1px;
+    }
+
+    /* Definição do efeito de Zoom In e Out */
+    @keyframes zoom-pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15); /* Aumenta 15% */
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Página 3</h1>
+    <p>Efeito de Pulsação</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página 4 - Texto Correndo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #ec7037; /* Laranja-Bege */
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Impede barras de rolagem */
+    }
+
+    /* Container que delimita a área onde o texto corre */
+    .marquee-container {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 100px;
+      font-weight: 900; /* Extra bold */
+      color: #f0eba6;
+      text-transform: uppercase;
+      display: inline-block;
+      padding-left: 100%; /* Começa fora da tela à direita */
+      
+      /* Animação: nome | duração | timing | repetição */
+      animation: correr-texto 10s linear infinite;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #7d6b56; /* Um tom de marrom para combinar com o bege */
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Regra da animação de movimento */
+    @keyframes correr-texto {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, 0); /* Move o texto todo para a esquerda */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="marquee-container">
+    <h1>Página 4 — Conteúdo em Movimento — Página 4 —</h1>
+  </div>
+  
+  <p>Texto Correndo</p>
+
+</body>
+</html>

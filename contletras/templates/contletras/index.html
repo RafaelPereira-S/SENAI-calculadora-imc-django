@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI | CONTADOR DE PALAVRAS</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --bg-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px; /* Levemente mais largo para o texto */
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Substituímos o input por textarea para textos longos */
+        textarea {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            resize: vertical; /* Permite ao usuário ajustar a altura */
+            min-height: 150px;
+        }
+
+        textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        .resultado-box {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .resultado-box h2 {
+            margin: 0;
+            color: var(--accent-color);
+            font-size: 28px;
+        }
+
+        .resultado-box p {
+            margin: 5px 0 0;
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>CONTADOR DE PALAVRAS</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="texto">Insira o texto abaixo:</label>
+        <textarea name="texto" id="texto" placeholder="Cole ou digite seu texto aqui..." required></textarea>
+
+        <button type="submit">CONTAR AGORA</button>
+    </form>
+
+    {% if total_palavras %}
+        <div class="resultado-box">
+            <h2>{{ total_palavras }}</h2>
+            <p>Palavras encontradas</p>
+            {% if total_caracteres %}
+                <small style="color: #7f8c8d;">(Total de {{ total_caracteres }} caracteres)</small>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="footer">
+        Desenvolvido em Python & Django
+    </div>
+</div>
+
+</body>
+</html>
